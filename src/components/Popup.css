@@ -51,3 +51,12 @@
     right: 155px;
     cursor: pointer;
   }
+  
+  .sat {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sat img {
+    width: 200px;
+  }

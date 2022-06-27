@@ -1,7 +1,5 @@
 * {
-  margin: 0;
   padding: 0;
-  border: 0;
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
@@ -20,16 +18,16 @@
 
 .navbar {
   display: flex;
-  background: white;
+  background: pink;
   position: fixed;
   top: 0;
   height: 20px;
-  padding: 10px;
   width: 100%;
   height: fit-content;
   justify-content: space-between;
   align-items: center;
   font-size: 15px;
+  padding-left: 5px;
 }
 
 .contact{
@@ -46,7 +44,7 @@
 
 .home {
   height: 650px;
-  background: #ECFDF1;
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,23 +60,19 @@
 }
 
 .about {
+  padding-left: 20px;
+  padding-top: 30px;
   height: 500px;
-  background: #FDD1D2;
+  background: white;
   display: flex;
   align-items: center;
-  padding-left: 80px;
-  padding-top: 30px;
 }
 
-.about p{
-  margin-top: 10px;
-  margin-bottom: 10px
-}
 
 .favlang {
   width: 100%;
   margin: 1px solid black;
-  background: #FDD1D2;
+  background: white;
   display: flex;
   align-items: center;
   padding-bottom: 20px;
@@ -90,6 +84,7 @@
   max-height: 75px;
   margin: 50px;
   margin-left: -10px;
+  object-fit: contain;
 }
 
 .favlang h4{
@@ -125,9 +120,18 @@ h3 {
   flex-direction: row;
 }
 
+
+.education img {
+  max-height: 200px;
+  max-width: 70%;
+  margin-bottom: 40px;
+  object-fit: contain;
+}
+
+
 .experiences {
   height: 650px;
-  background: #D4BBDD;
+  background: white;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -156,6 +160,11 @@ h3 {
 .project h2{
   margin-bottom: 50px;
 }
+
+h3{
+  margin: 0;
+}
+
 
 .project h4{
   margin-bottom: 5px;
@@ -198,4 +207,28 @@ h3 {
   font-weight: 700;
   font-size: 15px;
   cursor: pointer
+}
+
+.connect {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50%;
+  width: 90%;
+}
+
+
+.socials img {
+  width: 150px;
 }

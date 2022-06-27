@@ -10,10 +10,15 @@ import Popup2 from './components/Popup2';
 import Popup3 from './components/Popup3';
 import { useState } from "react";
 
+import React from 'react';
+import { useSpring, animated } from 'react-spring';
+
+
 function App() {
   const home = useRef(null);
   const about = useRef(null);
   const experiences = useRef(null);
+  const connect = useRef(null);
 
   const scrollToSection = (elementRef) => {
     window.scrollTo({
@@ -55,27 +60,32 @@ function App() {
   const [buttonPopup2, setButtonPopup2] = useState(false);
   const [buttonPopup3, setButtonPopup3] = useState(false);
 
+  const props = useSpring({ to: { opacity: 1 }, from: { opacity: 0 } })
+
+
   return (
     <div className="App">
-      <div className="navbar"> 
+      <div className="navbar">
         <ul>
             <li onClick = {() => scrollToSection(home)} className = "link"> home </li>
             <li onClick = {() => scrollToSection(about)} className = "link"> about </li>
             <li onClick = {() => scrollToSection(experiences)} className = "link"> projects </li>
         </ul>
-        <div>
-        <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
-          <a className="contact" href="mailto:candytanti2024@u.northwestern.edu"> 
+      <div>
+          <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
+          <a onClick = {() => scrollToSection(connect)} className="contact"> 
             Contact me
           </a>
         </div>
       </div>
+              
 
 
       <div className="main">
 
         <div ref={home} className="home">
           <h3> Hi, I'm Candy! </h3>
+          
           <p> (Nayada Tantichirasakul) </p>
           <p> I'm an undergraduate student studying Computer Science and Data Science at Northwestern University. </p>
         </div>
@@ -84,16 +94,15 @@ function App() {
             <div> 
               <h3>about</h3>
               <p> 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut pulvinar augue. Phasellus nisl nulla, laoreet quis sagittis a, ultricies eget turpis. Nam non eleifend nisl, vitae efficitur tortor. Curabitur finibus tellus magna, efficitur laoreet elit mattis sit amet. Nullam porttitor magna id fringilla commodo. Fusce vitae est in quam tempus finibus. Vestibulum et ex in ligula rutrum imperdiet. Nam in leo a felis porttitor consectetur vitae congue justo.
+              Hello, my name is Candy Tantichirasakul. I am an undergraduate student studying Computer Science at Northwestern University. I am also pursuing a minor in Data Science and certificate in Leadership. I am originally from Bangkok, Thailand but travelled to the United States in sophomore year to continue my studies at Phillips Exeter Academy.   
               </p>
-              <p> </p>
               <p>
-              Morbi eu ullamcorper turpis, non lobortis tortor. Donec vitae nunc ultrices nibh posuere convallis. Quisque ante turpis, luctus imperdiet dapibus sit amet, malesuada id magna. Ut laoreet blandit pretium. Phasellus vel ligula lorem. Aliquam lacus risus, rhoncus a bibendum at, semper cursus quam. Mauris egestas nec ante nec accumsan. Curabitur ut dui scelerisque, bibendum elit nec, rutrum nisl. Duis sollicitudin sit amet nulla quis feugiat. Nulla ut magna at neque porttitor imperdiet. In rutrum lectus est, in convallis quam cursus sit amet. Nam pretium congue nisi. Nunc fringilla, nibh nec rutrum tincidunt, metus felis pharetra turpis, quis varius sem nulla eget risus. Donec interdum elit sit amet luctus maximus. Nunc porttitor lorem id vestibulum feugiat. Integer aliquet nibh sit amet eros consequat viverra.
+              I am currently interested in how Computer Science can be used for social good, especially in the realm of education. I believe that education is the basis to understanding ourselves, our society and, thus, our future. I want to create more opportunities for other students to access the resources they need to discover their own passions and I believe that technology is the key to doing that.
               </p>
             </div>
-            <div>
-              <p> Exeter </p>
-              <p> Northwestern </p>
+            <div className="education">
+              <img src="pea.png" alt="Phillips Exeter Academy" />
+              <img src="nu.png" alt="Northwestern University" />
             </div>
         </div>
         <div className="favlang">
@@ -133,6 +142,15 @@ function App() {
               Interviewed experts within the field of Altmetrics and Journalism in order to test our hypothesis on existing media. </p>}
             </div>
             <Popup3 trigger={buttonPopup3} setTrigger={setButtonPopup3}></Popup3>
+          </div>
+        </div>
+
+        <div ref={connect} className="connect">
+          <h3> connect with me! </h3>
+          <div className="socials">
+            <a href="mailto:candytanti5@gmail.com"> <img src="./email.png" alt="email"/> </a>
+            <a href="https://www.linkedin.com/in/nayada-tantichirasakul-280702242/"> <img src="./linkedin.png" alt="linkedin" /> </a>
+            <a href="https://github.com/candytanti?tab=repositories"> <img src="./github.png" alt="github" /> </a>
           </div>
         </div>
 
